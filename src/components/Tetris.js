@@ -17,6 +17,7 @@ import StartButton from './StartButton';
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [gameContinue, setGameContinue] = useState(false);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -50,6 +51,7 @@ const Tetris = () => {
     setLevel(0);
     setRows(0);
     setGameOver(false);
+    setGameContinue(true);
   };
 
   const drop = () => {
@@ -68,6 +70,7 @@ const Tetris = () => {
         console.log('GAME OVER!!!');
         setGameOver(true);
         setDropTime(null);
+        setGameContinue(false);
       }
       updatePlayerPos({ x: 0, y: 0, collided: true });
     }
@@ -119,7 +122,7 @@ const Tetris = () => {
               <Display text={`Level: ${level}`} />
             </div>
           )}
-          <StartButton callback={startGame} />
+          { gameContinue ? null : <StartButton callback={startGame} /> }
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
