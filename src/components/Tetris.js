@@ -57,10 +57,10 @@ const Tetris = () => {
   const startGame = () => {
     // Reset everything
     setStage(createStage());
-    setDropTime(1000);
+    setDropTime(750);
     resetPlayer();
     setScore(0);
-    setLevel(0);
+    setLevel(1);
     setRows(0);
     setGameOver(false);
     setGameContinue(true);
@@ -69,10 +69,10 @@ const Tetris = () => {
 
   const drop = () => {
     // Increase level when player has cleared 10 rows
-    if (rows > (level + 1) * 10) {
+    if (rows >= (level) * 10) {
       setLevel(prev => prev + 1);
       // Also increase speed
-      setDropTime(1000 / (level + 1) + 200);
+      setDropTime(750 / (level + 1) + 200);
     }
 
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
