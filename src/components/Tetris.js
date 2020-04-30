@@ -13,6 +13,7 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import GameButton from './GameButton';
+import Navigation from './Navigation';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -136,9 +137,9 @@ const Tetris = () => {
           { gameContinue ? 
           <div>
             { gamePaused ? 
-            <GameButton callback={pauseGame} text={"Resume Game"}/> 
+            <GameButton callback={pauseGame} text={"Resume"}/> 
             : 
-            <GameButton callback={pauseGame} text={"Pause Game"}/>}
+            <GameButton callback={pauseGame} text={"Pause"}/>}
           </div> : 
           <div>
             <GameButton callback={startGame} text={"Start Game!"}/>
