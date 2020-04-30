@@ -22,8 +22,8 @@ const StyledStartButton = styled.button`
   }
 `;
 
-const StartButton = ({ callback }) => (
-  <StyledStartButton onClick={callback}>Start Game</StyledStartButton>
+const GameButton = ({ callback, text }) => (
+  <StyledStartButton onClick={callback}>{text}</StyledStartButton>
 );
 
-export default StartButton;
+export default GameButton;

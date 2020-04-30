@@ -12,12 +12,13 @@ import { useGameStatus } from '../hooks/useGameStatus';
 // Components
 import Stage from './Stage';
 import Display from './Display';
-import StartButton from './StartButton';
+import GameButton from './GameButton';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [gameContinue, setGameContinue] = useState(false);
+  const [gamePaused, setGamePaused] = useState(false);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -40,6 +41,16 @@ const Tetris = () => {
         setDropTime(1000 / (level + 1));
       }
     }
+  };
+
+  const pauseGame = () => {
+    if (gamePaused){
+      setGamePaused(false);
+      setDropTime(1000 / (level + 1));
+    } else {
+      setGamePaused(true);
+      setDropTime(null);
+    };
   };
 
   const startGame = () => {
@@ -122,7 +133,17 @@ const Tetris = () => {
               <Display text={`Level: ${level}`} />
             </div>
           )}
-          { gameContinue ? null : <StartButton callback={startGame} /> }
+          { gameContinue ? 
+          <div>
+            { gamePaused ? 
+            <GameButton callback={pauseGame} text={"Resume Game"}/> 
+            : 
+            <GameButton callback={pauseGame} text={"Pause Game"}/>}
+          </div> : 
+          <div>
+            <GameButton callback={startGame} text={"Start Game!"}/>
+          </div>
+          }
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
