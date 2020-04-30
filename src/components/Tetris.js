@@ -19,7 +19,7 @@ const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [gameContinue, setGameContinue] = useState(false);
-  const [gamePaused, setGamePaused] = useState(false);
+  const [gamePaused, setGamePaused] = useState(true);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -64,6 +64,7 @@ const Tetris = () => {
     setRows(0);
     setGameOver(false);
     setGameContinue(true);
+    setGamePaused(false);
   };
 
   const drop = () => {
@@ -83,6 +84,7 @@ const Tetris = () => {
         setGameOver(true);
         setDropTime(null);
         setGameContinue(false);
+        setGamePaused(true);
       }
       updatePlayerPos({ x: 0, y: 0, collided: true });
     }
@@ -98,11 +100,11 @@ const Tetris = () => {
   // This one starts the game
   // Custom hook by Dan Abramov
   useInterval(() => {
-    drop();
+    if( !gamePaused ) drop();
   }, dropTime);
 
   const move = ({ keyCode }) => {
-    if (!gameOver) {
+    if (!gameOver & !gamePaused) {
       if (keyCode === 37) {
         movePlayer(-1);
       } else if (keyCode === 39) {
