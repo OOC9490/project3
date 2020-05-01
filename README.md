@@ -16,6 +16,7 @@ Additions or changes for the project in the (very) near future:
 
 - Backend + user login/ sign up (this will allow for recording personal high scores and perhaps, sharing said scores on leader boards)
 - Implementing another react extension that would handle the game's timer (might allow for better movement of the pieces and additional animations during row clears etc.)
+- Mobile Device support (can only be played using a keyboard at the moment)
 
 ### Credits
 
