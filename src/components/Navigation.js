@@ -13,6 +13,7 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import OpenControls from './Controls';
 
 const Navigation = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navigation = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="#">Controls</NavLink>
+              <OpenControls />
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/OOC9490/project3/tree/master/src">Source Code</NavLink>
