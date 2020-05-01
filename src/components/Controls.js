@@ -8,7 +8,7 @@ const OpenControls = () => {
 
     return (
         <div>
-            <Button color="info" onClick={toggle}>View Controls</Button>
+            <Button color="info" onClick={toggle}>Instructions</Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>Game Controls & Notes</ModalHeader>
                 <ModalBody>
