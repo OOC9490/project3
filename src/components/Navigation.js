@@ -22,7 +22,7 @@ const Navigation = (props) => {
 
   return (
     <div>
-      <Navbar color="dark" light expand="md">
+      <Navbar color="light" light expand="md">
         <NavbarBrand>React-Tetris</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

@@ -1,8 +1,36 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## The project
 
-In the project directory, you can run:
+I wanted to increase my expertise in React.js (particularly applying and managing state with "Hooks" in non-class components).
+
+[Website preview](https://imgur.com/F31eqOH)
+
+### Technology used
+
+- React.js: Styled Components, (Custom) Hooks, React/Bootstrap
+
+### For the future
+
+Additions or changes for the project in the (very) near future:
+
+- Backend + user login/ sign up (this will allow for recording personal high scores and perhaps, sharing said scores on leader boards)
+- Implementing another react extension that would handle the game's timer (might allow for better movement of the pieces and additional animations during row clears etc.)
+
+### Credits
+
+These are the source of some resources used in the project:
+
+- [Dan Abramov's useInterval React Hook](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
+- The font (author: Sizenko Alexander, www.styleseven.com, The fonts Pixel LCD-7 is freeware for home using.)
+
+## Project Scripts
+
+After cloning or downloading the files within this repository, you can run the following in the project's directory:
+
+### `npm install`
+
+Installs all dependencies described in "package.json" into a folder called "node_modules" in the project's root directory, this will allow your local machine to run the application with the scripts to follow.
 
 ### `npm start`
 
