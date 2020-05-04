@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 I wanted to increase my expertise in React.js (particularly applying and managing state with "Hooks" in non-class components).
 
 [Website preview](https://imgur.com/F31eqOH)
+[Live website](https://ooc9490-tetris-react.netlify.app/)
 
 ### Technology used
 
